@@ -1,0 +1,57 @@
+[genuitec-file-id="wc2-12"],[genuitec-lp-path="/OnlineSubmit/WebRoot/css/submit.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.main-area {
+	background: #1E5B94;
+}
+
+.am-topbar {
+	margin-bottom: 0;
+}
+
+
+.upload-area {
+	margin-top: 32px;
+}
+
+.am-form label {
+	color: white;
+}
+
+.am-form #file-value {
+	color: gray;
+}
+
+.procedure {
+	background: #fff;
+}
+
+.procedure .procedure-title {
+	text-align: center;
+	margin: 32px 0;
+	font-size: 150%;
+	
+}
+
+.procedure .procedure-step {
+	color: #5eb95e;
+}
+
+.procedure .procedure-content {
+	font-size: 93%;
+}
+
+.footer {
+	background: #2d3e50;
+	color: #7f8c8d;
+	padding: 8px 0;
+}
+
+input {
+	font-family: "consolas";
+}
+
+img {
+	display: inline-block;
+}

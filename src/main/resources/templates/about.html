@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	  <meta name="viewport"
+	        content="width=device-width, initial-scale=1" />
+	  <meta name="format-detection" content="telephone=no" />
+	  <meta name="renderer" content="webkit" />
+	  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+	  <!-- Set render engine for 360 browser -->
+	  <meta name="renderer" content="webkit" />
+	
+	  <link rel="icon" type="image/png" href="/img/icon.png" />
+	
+	  <!-- Add to homescreen for Chrome on Android -->
+	  <meta name="mobile-web-app-capable" content="yes" />
+	  <link rel="icon" sizes="192x192" href="/img/icon@2x.png" />
+	
+	  <!-- Add to homescreen for Safari on iOS -->
+	  <meta name="apple-mobile-web-app-capable" content="yes"/>
+	  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	  <meta name="apple-mobile-web-app-title" content="Online Submit"/>
+	  <link rel="apple-touch-icon-precomposed" href="img/icon60@2x.png"/>
+	  <link href="/img/icon60@2x.png" rel="apple-touch-icon" sizes="120x120"/>
+	  <link href="/img/icon72@2x.png" rel="apple-touch-icon" sizes="114x114"/>
+	  <link href="/img/icon60@3x.png" rel="apple-touch-icon" sizes="180x180"/>
+	
+	  <!-- Tile icon for Win8 (144x144 + tile color) -->
+	  <meta name="msapplication-TileImage" content="/img/icon72@2x/png"/>
+	  <meta name="msapplication-TileColor" content="#0e90d2"/>
+	  <link rel="stylesheet" href="/assets/css/amazeui.min.css"/>
+  		<link rel="stylesheet" href="/assets/css/app.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/style.css" />
+		<title>关于我们</title>
+	<style type="text/css">
+	  .am-topbar-brand a {
+	      text-decoration: none;
+	  }
+	</style>
+	
+	<script src="/js/jquery-2.1.4.min.js"></script>
+	
+</head>
+<body>
+<header>
+		<div class="am-container">
+			<div class="am-topbar-brand">
+				<a href="javascript:;"><strong>关于我们</strong><small> About</small></a>
+			</div>
+				<button style="outline: none;" class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
+	            data-am-collapse="{target: '#collapse-head'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+	
+		    	<div class="am-collapse am-topbar-collapse" id="collapse-head">
+		      
+		      <div class="am-topbar-right">
+		        <button style="outline: none;" class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-btn-noountline" id="btn-index"><span class="am-icon-info-home"></span> 返回首页 </button>
+		      </div>
+		    
+		    </div>
+		</div>
+	</header>
+	<div class="am-container">
+		<h1>关于我们</h1>
+
+		<h2>版本介绍</h2>
+		
+		<p>本版本为 v 2.0 版，基于 1.x 进行全方位的重构，包括界面的重构。</p>
+		
+		<p>我们在 v1.x 的基础上，增加了更多的更新、更实用的功能，包括：</p>
+		
+		<ul>
+			<li>增加在线的预览功能，无需下载，无需打开本地文件，在线预览即可查看到所需要的内容</li>
+			<li>改进了身份确认机制，为您的提供给了更加安全的服务</li>
+			<li>改进用户安全性设置，管理员将在更加安全的环境下保持工作</li>
+			<li>改进了服务端稳定性</li>
+			<li>改进数据交换标准，增强了数据的可靠性</li>
+			<li>完善了管理用户执行操作的安全机制，管理员用户的身份验证更加严格，权限认证更加严格，防止恶意的管理员越级权限</li>
+			<li>改进了服务架构，提高了稳定性</li>
+			<li>提升了前端界面的美观性，风格更加美观</li>
+			<li>加入响应式布局，可以轻松的在移动设备上进行查看和管理</li>
+			<li>增强了用户交互，体验更加流畅</li>
+			<li>其他一些等你发现的新功能、新用途</li>
+		</ul>
+		
+		<blockquote>
+		<p>新的世界，新的面容，准备面对新的人群，更多的更新体验，期待您的加入！</p>
+		</blockquote>
+		
+		<h2>程序介绍</h2>
+		
+		<p>我们的系统，为您提供了方便的作业管理机制，您可以轻松地使用我们的系统，进行作业的提交，作业的预览，作业的下载，以及打包等等的功能。</p>
+		
+		<p>我们提供了简单而直接的管理方式，旨在减轻您的一切负担。我们为您提供了便捷、安全、可靠的傻瓜式安装服务，减轻了您繁琐的配置过程。傻瓜式安装，傻瓜式提供服务，一切都会显得轻便而从容！</p>
+		
+		<blockquote>
+		<p>请您下载我们的安装程序，立即试用吧！</p>
+		</blockquote>
+		
+		<p>我们将主要为您提供一下内容：</p>
+		
+		<ol>
+			<li>作业的在线提交方式，通过使用并发布我们的系统，您可以轻松的将本项目发布到您当前的工作网、校园网内，无需其他服务器的支持，在您工作区内的用户，将可以直接的通过浏览器进行访问；</li>
+			<li>在线的作业管理方式，我们为您提供了单独的后台管理入口，方便您轻松的查看系统中已经提交的文件、查看文件上传的时间以及一些相关的用户信息，您将可以从这里得到方便的管理；</li>
+			<li>在线的文件内容预览支持，为了方便您的管理以及查看，我们为您提供了简单快速的文件在线预览功能，您可以不用打开文件本身，而直接查看文件内容，并且我们为您设计了合适的高亮效果，如果您正在查看源代码文件，您将得到不一样的体验；</li>
+			<li>文件下载及打包支持，为了支持您的数据的备份需要，我们为您提供了一键式的文件下载功能。您可以一键式的将指定文件或数据下载到您的本地下载目录，或另存为你所想保存的位置，减轻了您繁重的文件查找的过程，您只需要一键点击，即可将所有的或指定的文件，下载到您的本地，并备份到您的可移动存储介质中；</li>
+			<li>唯一性用户标识，在 1.X系列中，我们采用了学号的唯一标识，在 2.X中，我们已经大大改进该不足之处，为您提供更加可靠的唯一标识服务，防止不良用户的恶意提交，重复提交等非法操作，充分保护了您当前服务器的安全，并保证了您的数据可靠性，为您提供了更加稳定的服务。</li>
+		</ol>
+		
+		<blockquote>
+		<p>我们将承此契机，持续为您保持更新，请您时刻关注我们的更新。在您的使用过程中，若发现任何问题，请您及时反馈至：<a href=""> frankdeveloper@126.com </a> 我们将及时为您提供更新和解决方案！</p>
+		</blockquote>
+		
+		<h2>我们的优势</h2>
+		
+		<p>轻松、便捷、可靠和小巧可能是我们为您提供的最佳的解决方案。我们应用了本地服务的高效性，可以充分的减轻您的设备需求，无需您提供服务器或其他主机设备，无需您提供数据库及其他服务，我们采用全新的数据交换方式，将服务本地化。</p>
+		
+		<p>我们为您做好了一切，您只需要安装、发布，它将自动为您提供服务并开始工作，您可以放心的进行管理。</p>
+		
+		<p>我们提供本地化的服务，为您充分的保护了数据的安全性，并且无需开启其他服务，您的数据将在工作区内保持可见，并且数据的操纵权力，交给了您的管理员，保证了普通工作人员或参与人员的拥有足够安全的权限！</p>
+		
+		<p>方便的管理和维护，若您在使用过程中出现意外情况，您可以选择重新安装，或重新启动服务，您的服务将重新开始工作，避免了漫长的维护过程！</p>
+	</div>
+
+<script src="/assets/js/amazeui.ie8polyfill.min.js"></script>
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="/js/jquery-2.1.4.min.js"></script>
+<!--<![endif]-->
+<script src="/assets/js/amazeui.min.js"></script>
+<script type="text/javascript">
+	  $('#btn-index').click(function(){
+	    window.location.href = '/'
+	  })
+</script>
+</body>
+
+</html>
+

@@ -1,0 +1,208 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>提交页面</title>
+
+<!-- Set render engine for 360 browser -->
+<meta name="renderer" content="webkit" />
+
+<link rel="icon" type="image/png" href="/img/icon.png" />
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes" />
+<link rel="icon" sizes="192x192" href="/img/icon@2x.png" />
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-title" content="Online Submit" />
+<link rel="apple-touch-icon-precomposed" href="/img/icon60@2x.png" />
+<link href="/img/icon60@2x.png" rel="apple-touch-icon" sizes="120x120" />
+<link href="/img/icon72@2x.png" rel="apple-touch-icon" sizes="114x114" />
+<link href="/img/icon60@3x.png" rel="apple-touch-icon" sizes="180x180" />
+
+<!-- Tile icon for Win8 (144x144 + tile color) -->
+<meta name="msapplication-TileImage" content="/img/icon72@2x/png" />
+<meta name="msapplication-TileColor" content="#0e90d2" />
+
+<link rel="stylesheet" href="/assets/css/amazeui.min.css" />
+<link rel="stylesheet" href="/assets/css/app.css" />
+<link rel="stylesheet" type="text/css" href="/css/submit.css" />
+</head>
+<body>
+	<header class="am-topbar am-topbar-inverse">
+
+		<div class="am-container">
+			<div class="am-topbar-brand">
+				<a href="javascript:;"><strong>提交作业</strong><small>
+						Submit your jobs.</small></a>
+			</div>
+			<button style="outline: none;"
+				class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
+				data-am-collapse="{target: '#collapse-head'}">
+				<span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span>
+			</button>
+
+			<div class="am-collapse am-topbar-collapse" id="collapse-head">
+
+				<div class="am-topbar-right">
+					<button style="outline: none;"
+						class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-btn-noountline"
+						id="btn-index">
+						<span class="am-icon-info-home"></span> 返回首页
+					</button>
+				</div>
+
+			</div>
+		</div>
+	</header>
+
+	<div class="main-area">
+		<div class="am-g">
+			<div class="am-container">
+				<div class="upload-area">
+					<form id="upload-form" autocomplete="off" action="" method="post"
+						class="am-form" enctype="multipart/form-data">
+						<fieldset>
+							<!-- 							<div class="am-form-group"> -->
+							<!-- 								<label class="am-form-label" for="job-type">选择作业</label> -->
+							<!-- 								<select id="job-type" class="am-form-field" data-am-selected="{btnSize: 'sm', btnStyle: 'secondary'}"> -->
+							<!-- 									<option value="a">第一次</option> -->
+							<!-- 									<option value="b">第二次</option> -->
+							<!-- 									<option value="o">第三次</option> -->
+							<!-- 									<option value="m">第四次</option> -->
+							<!-- 								</select> -->
+							<!-- 							</div> -->
+
+							<div class="am-form-group">
+								<label for="studentcode-value">学号</label> <input type="text"
+									name="studentcode" id="studentcode-value" class="am-form-field"
+									required="required" placeholder="输入你的学号" />
+
+							</div>
+							<div class="am-form-group">
+								<label for="name-value">姓名</label> <input id="name-value"
+									name="name" type="text" class="am-form-field"
+									required="required" placeholder="输入你的真实姓名" />
+							</div>
+							<div class="am-form-group am-form-file">
+								<label for="fire-area">选择文件</label>
+								<div>
+									<input id="file-area" name="file"
+										accept=".txt, .h, .c, .cpp, .java, .cs, .py, .lua" type="file"
+										hidden="hidden" style="display: none;" />
+									<button style="outline: none;" type="button" id="btn-select"
+										class="am-btn am-btn-default am-btn-sm"
+										data-am-popover="{content: '选择你所需要上传的数据或文件', trigger: 'hover focus'}">
+										<i class="am-icon-cloud-upload"></i> 选择要上传的文件
+									</button>
+								</div>
+							</div>
+							<div id="file-value"></div>
+							<div class="am-form-group am-form-file">
+								<label for="ip-address" class="am-form-label">IP地址</label> <input
+									id="ip-address" name="ipaddr" class="am-form-field"
+									readonly="readonly" placeholder="这里将显示当前机器的IP地址" th:value="${ipaddr}" />
+							</div>
+							<p>
+								<button style="outline: none;" id="btn-submit" type="button"
+									class="am-btn am-btn-primary am-fr"
+									data-am-popover="{content: '提交你的数据', trigger: 'hover focus'}">
+									<i class="am-icon-check" style="margin-right: 4px;"></i>提交
+								</button>
+							</p>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--
+    	作者：offline
+    	时间：2016-11-01
+    	描述：弹出确认框
+    -->
+	<div class="am-modal am-modal-confirm" tabindex="-1"
+		id="upload-confirm">
+		<div class="am-modal-dialog">
+			<div class="am-modal-hd">确认提交？</div>
+			<div class="am-modal-bd">
+				确定提交该文件到服务器吗，提交后你可能无法修改，如需修需联系管理人员。
+				<p>要继续吗？</p>
+			</div>
+			<div class="am-modal-footer">
+				<span class="am-modal-btn" data-am-modal-cancel="">取消</span> <span
+					class="am-modal-btn" data-am-modal-confirm="">确定</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- 弹出alert  -->
+	<div class="am-modal am-modal-alert" tabindex="-1" id="invalid-alert">
+		<div class="am-modal-dialog">
+			<div class="am-modal-hd">缺少值</div>
+			<div class="am-modal-bd" id="reason-alert"></div>
+			<div class="am-modal-footer">
+				<span class="am-modal-btn">好的</span>
+			</div>
+		</div>
+	</div>
+
+	<br />
+	<br />
+
+	<div class="procedure">
+		<div class="am-g am-container">
+			<div class="am-u-lg-12">
+				<h2 class="procedure-title">请遵循以下步骤，完成你的提交</h2>
+				<div class="am-g">
+					<div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+						<h3 class="procedure-step">选择你要上传的文件</h3>
+						<p class="procedure-content">
+							从你当前的设备中，选中你所认为正确的目标文件。默认过滤txt文本文件，如果你需要上传其他类型文件，请你更改文件类型，并选择好您的文件
+						</p>
+					</div>
+					<div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+						<h3 class="procedure-step">确认当前的IP地址</h3>
+						<p class="procedure-content">
+							我们将自动为你获取到当前客户端的IP地址，为了防止人恶意重复进行提交，并充分保证服务器系统的安全性稳定性，以及后台数据的可靠性，我们对你的机器进行唯一标识，若你已经上传了一份文件到服务器中，你将无法进行第二次上传，若要重新上传，请联系当前的管理人员！
+						</p>
+					</div>
+					<div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+						<h3 class="procedure-step">填写你本人的基本信息</h3>
+						<p class="procedure-content">
+							很高兴你能够使用本系统，为保证管理人员便于识别你的身份，请你认真的完善你的个人信息。其中包括你的学号，姓名等的信息，这些信息将是必要的，请不要视图跳过，否则我们将拒绝你向服务器所提出的请求！
+						</p>
+					</div>
+					<div class="am-u-lg-3 am-u-md-6 am-u-sm-12">
+						<h3 class="procedure-step">确认以提交</h3>
+						<p class="procedure-content">
+							为了充分保证你的数据准确无误，避免管理人员的麻烦，请你充分确认你的信息和数据准确无误后再选择提交，因为提交后你可能无法直接更改，需要联系管理人员。在你选择提交后，我们将提示你进行确认，请您确认无误后选择提交，我们将自动将您的数据提交到服务器，请耐心等候服务器的响应，这将花费很短的时间！
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="am-footer am-footer-text footer">
+		<p>
+			© 2016 <a href="http://blog.csdn.net/zouzhipeng1717" target="_blank">Frank
+				Developer</a> 本站由 <a href="http://www.jxufe.edu.cn" target="_blank">江西财经大学</a>
+			软件与通信工程学院 邹智鹏 提供技术支持
+		</p>
+	</footer>
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<script src="/js/jquery-2.1.4.min.js"></script>
+	<!--<![endif]-->
+	<script src="/assets/js/amazeui.ie8polyfill.min.js?v=20170407"></script>
+	<script src="/assets/js/amazeui.min.js?v=20170407"></script>
+	<script src="/js/submit.js?v=20170407"></script>
+</body>
+</html>

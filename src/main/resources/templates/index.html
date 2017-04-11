@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+  <meta charset="UTF-8"/>
+  <title th:text="${title}"></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="renderer" content="webkit"/>
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit"/>
+
+  <link rel="icon" type="image/png" href="img/icon.png"/>
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <link rel="icon" sizes="192x192" href="img/icon@2x.png"/>
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="apple-mobile-web-app-title" content="Online Submit"/>
+  <link rel="apple-touch-icon-precomposed" href="img/icon60@2x.png"/>
+  <link href="img/icon60@2x.png" rel="apple-touch-icon" sizes="120x120"/>
+  <link href="img/icon72@2x.png" rel="apple-touch-icon" sizes="114x114"/>
+  <link href="img/icon60@3x.png" rel="apple-touch-icon" sizes="180x180"/>
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="img/icon72@2x/png"/>
+  <meta name="msapplication-TileColor" content="#0e90d2"/>
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <link rel="stylesheet" type="text/css" href="css/style_sys.css"/>
+
+  <style>
+    .am-btn-noountline {
+    	outline: none;
+    }
+    .get {
+      background: #1E5B94;
+      color: #fff;
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .get-title {
+      font-size: 200%;
+      border: 2px solid #fff;
+      padding: 20px;
+      display: inline-block;
+    }
+
+    .get-btn {
+      background: #fff;
+    }
+
+    .detail {
+      background: #fff;
+    }
+
+    .detail-h2 {
+      text-align: center;
+      font-size: 150%;
+      margin: 40px 0;
+    }
+
+    .detail-h3 {
+      color: #1f8dd6;
+    }
+
+    .detail-p {
+      color: #7f8c8d;
+    }
+
+    .detail-mb {
+      margin-bottom: 30px;
+    }
+
+    .hope {
+      background: #0bb59b;
+      padding: 50px 0;
+    }
+
+    .hope-img {
+      text-align: center;
+    }
+
+    .hope-hr {
+      border-color: #149C88;
+    }
+
+    .hope-title {
+      font-size: 140%;
+    }
+
+    .about {
+      background: #fff;
+      padding: 40px 0;
+      color: #7f8c8d;
+    }
+
+    .about-color {
+      color: #34495e;
+    }
+
+    .about-title {
+      font-size: 180%;
+      padding: 30px 0 50px 0;
+      text-align: center;
+    }
+
+    .footer p {
+      color: #7f8c8d;
+      margin: 0;
+      padding: 15px 0;
+      text-align: center;
+      background: #2d3e50;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="am-container">
+    <h1 class="am-topbar-brand">
+      <a href="">Online Submit</a>
+    </h1>
+
+    <button style="outline: none;" class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
+            data-am-collapse="{target: '#collapse-head'}"><span class="am-sr-only">导航切换</span> <span
+        class="am-icon-bars"></span></button>
+
+    <div class="am-collapse am-topbar-collapse" id="collapse-head">
+      <ul class="am-nav am-nav-pills am-topbar-nav">
+        <li class="am-active"><a href="/">首页</a></li>
+      </ul>
+
+      <div class="am-topbar-right">
+        <button id="btn-about" style="outline: none;" class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-btn-noountline"><span class="am-icon-info-circle"></span> 关于 </button>
+      </div>
+      
+      <div class="am-topbar-right">
+        <button style="outline: none;" class="am-btn am-btn-secondary am-topbar-btn am-btn-sm am-btn-noountline" id="btn-edit"><span class="am-icon-edit"></span> 立即编写 </button>
+      </div>
+      
+
+      <div class="am-topbar-right">
+        <button data-am-modal="{target: '#admin-login-popup'}" style="outline: none;" class="am-btn am-btn-primary am-topbar-btn am-btn-sm am-btn-noountline"><span class="am-icon-user"></span>管理员</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="get">
+  <div class="am-g">
+    <div class="am-u-lg-12">
+      <h1 class="get-title">Online Submit - 一个全新的数据提交方式</h1>
+
+      <p>
+        期待你的参与，获取和使用它，反馈它，相信他可以带给你更多。
+      </p>
+
+      <p>
+        <a href="submit" class="am-btn am-btn-sm get-btn">尝试新get技能√</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="detail">
+  <div class="am-g am-container">
+    <div class="am-u-lg-12">
+      <h2 class="detail-h2">One Platform 、Any Device、Any User，期待你的加入!</h2>
+
+      <div class="am-g">
+        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
+
+          <h3 class="detail-h3">
+            <i class="am-icon-upload am-icon-sm"></i>
+            在线的提交方式
+          </h3>
+
+          <p class="detail-p">
+            采用独特的方式，方便系统参与者的在线提交。打破常规，超越传统的提交方式，使用优越准确的唯一性约束条件，让您轻松各管理参与者。
+          </p>
+        </div>
+        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
+          <h3 class="detail-h3">
+            <i class="am-icon-key am-icon-sm"></i>
+            内网发布，安全可靠
+          </h3>
+
+          <p class="detail-p">
+            本系统开放了一个可安装化的环境，可以方便的部署到您的个人服务器中或校园网中，资源都在本地，安全可靠，为您提供了高效的响应速度，减轻了加载的负荷。
+            
+          </p>
+        </div>
+        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
+          <h3 class="detail-h3">
+            <i class="am-icon-check-square-o am-icon-sm"></i>
+            本地化预览检查
+          </h3>
+
+          <p class="detail-p">
+            如果您有需要，您可以直接在本地查看支持格式的文本内容，数据将会显得更加直接，预览也将变得高效和直观。用我们的方式预览，用我们的方式阅读，您的体验或许会更好！
+          </p>
+        </div>
+        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
+          <h3 class="detail-h3">
+            <i class="am-icon-download am-icon-sm"></i>
+            轻松下载，便捷打包
+          </h3>
+
+          <p class="detail-p">
+            为了您能够快捷的备份数据，我们为您体用了一键式的打包服务。您所需要的数据，将会通过一键操作的方式，轻松下载到您的本地计算机，解决了您复杂的文件查找过程。备份数据，将会变得轻松可靠！
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="hope">
+  <div class="am-g am-container">
+    <div class="am-u-lg-4 am-u-md-6 am-u-sm-12 hope-img">
+      <img src="/assets/i/examples/landing.png" alt="" data-am-scrollspy="{animation:'slide-left', repeat: false}"/>
+      <hr class="am-article-divider am-show-sm-only hope-hr"/>
+    </div>
+    <div class="am-u-lg-8 am-u-md-6 am-u-sm-12">
+      <h2 class="hope-title">您的反馈，将是我们的路线</h2>
+
+      <p>
+        乐于听见您的声音，您的任何有用的意见或需求，都是我们发展的路线和方向，我们会为您提供意想不到的便捷服务。我们乐此不疲，我们需要沟通，我们更相信我们路漫漫其修远兮……
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="about">
+  <div class="am-g am-container">
+    <div class="am-u-lg-12">
+      <h2 class="about-title about-color">Online Submit - 方便快捷的提交方式，您的首要选择</h2>
+      </div>
+    </div>
+  </div>
+<div class="am-popup" id="admin-login-popup">
+  <div class="am-popup-inner">
+    <div class="am-popup-hd">
+      <h4 class="am-popup-title">管理员登录</h4>
+      <span data-am-modal-close=""
+             class="am-close"><span class="am-icon-close"></span></span>
+    </div>
+    <div class="am-popup-bd">
+    	<iframe id="login-frame" src="/page/login" width="100%" height="100%"></iframe>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>© 2016 <a href="http://blog.csdn.net/zouzhipeng1717" target="_blank">Frank Developer</a> 本站由 <a
+      href="http://www.jxufe.edu.cn" target="_blank">江西财经大学</a> 软件与通信工程学院 邹智鹏 提供技术支持</p>
+</footer>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="js/jquery-2.1.4.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+<script type="application/javascript">
+	window.onresize = function(){
+		document.getElementById('login-frame').height = document.getElementById('admin-login-popup').clientHeight
+	}
+	$('#admin-login-popup').on('opened.modal.amui', function(){
+		var height = parseInt(document.getElementById('admin-login-popup').clientHeight)
+		document.getElementById('login-frame').height = height - 43 + ''
+	})
+	
+	$('#btn-edit').click(function(){
+		window.location.href = 'submit'
+	})
+	
+	$('#btn-about').click(function(){
+	  window.location.href = "page/about"
+	})
+	
+	</script>
+</body>
+</html>

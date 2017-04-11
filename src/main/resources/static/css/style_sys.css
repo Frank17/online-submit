@@ -1,0 +1,11 @@
+[genuitec-file-id="wc2-11"],[genuitec-lp-path="/OnlineSubmit/WebRoot/css/style_sys.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+body {
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+}
+
+*{
+	-webkit-font-smoothing: antialiased;
+}
